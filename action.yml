@@ -33,6 +33,10 @@ inputs:
     description: 'The remote key passphrase'
     required: false
     default: ''
+  cmd:
+    description: 'The remote cmd'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'

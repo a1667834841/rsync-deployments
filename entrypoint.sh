@@ -17,4 +17,4 @@ DSN="$INPUT_REMOTE_USER@$INPUT_REMOTE_HOST"
 sh -c "rsync $SWITCHES -e '$RSH' $LOCAL_PATH $DSN:$INPUT_REMOTE_PATH"
 
 # execute cmd
-ssh $DSN "df -h"
+ssh $DSN $INPUT_CMD

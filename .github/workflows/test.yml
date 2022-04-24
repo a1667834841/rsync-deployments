@@ -20,3 +20,4 @@ jobs:
           remote_port: 22
           remote_user: root
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          cmd: df -h
