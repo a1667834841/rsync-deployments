@@ -1,10 +1,8 @@
 # rsync deployments
 
-This GitHub Action deploys files in `GITHUB_WORKSPACE` to a remote folder via rsync over ssh. 
+远程同步文件且执行命令
 
-Use this action in a CD workflow which leaves deployable code in `GITHUB_WORKSPACE`.
-
-The base-image (drinternet/rsync) of this action is very small and is based on Alpine 3.15.0 (no cache) which results in fast deployments.
+借助 https://github.com/marketplace/actions/rsync-deployments-action 的CD功能，简单添加了下远程执行命令
 
 ---
 
@@ -27,6 +25,8 @@ The base-image (drinternet/rsync) of this action is very small and is based on A
 - `remote_key`* - The remote ssh key
 
 - `remote_key_pass` - The remote ssh key passphrase (if any)
+- 
+- `cmd` - The remote ssh key passphrase (if any)
 
 ``* = Required``
 
@@ -126,82 +126,3 @@ jobs:
         remote_key_pass: ${{ secrets.DEPLOY_KEY_PASS }}
 ```
 ---
-
-## Version 4.0 & 4.1
-
-Looking for version 4.0 and 4.1?
-
-Check here: 
-
-- https://github.com/Burnett01/rsync-deployments/tree/4.0
-- https://github.com/Burnett01/rsync-deployments/tree/4.1
-
-Version 4.0 & 4.1 use the ``drinternet/rsync:1.0.1`` base-image.
-
----
-
-## Version 3.0 (EOL)
-
-Looking for version 3.0?
-
-Check here: https://github.com/Burnett01/rsync-deployments/tree/3.0
-
-Version 3.0 uses the ``alpine:latest`` base-image directly.<br>
-Consider upgrading to 4.0 that uses a docker-image ``drinternet/rsync:1.0.1`` that is<br>
-based on ``alpine:latest``and heavily optimized for rsync.
-
-## Version 2.0 (EOL)
-
-Looking for version 2.0?
-
-Check here: https://github.com/Burnett01/rsync-deployments/tree/2.0
-
-Version 2.0 uses a larger base-image (``ubuntu:latest``).<br>
-Consider upgrading to 3.0 for even faster deployments.
-
-## Version 1.0 (EOL)
-
-Looking for version 1.0?
-
-Check here: https://github.com/Burnett01/rsync-deployments/tree/1.0
-
-Please note that version 1.0 has reached end of life state.
-
----
-
-## Acknowledgements
-
-+ This project is a fork of [Contention/rsync-deployments](https://github.com/Contention/rsync-deployments)
-+ Base image [JoshPiper/rsync-docker](https://github.com/JoshPiper/rsync-docker)
-
----
-
-## Media
-
-This action was featured in multiple blogs across the globe:
-
-- https://leobrack.co.uk/blog/2020-02-15-automatically-push-changes-to-your-live-site-with-github-actions
-
-- https://blog.maniak.co/ci-cd-for-wordpress/
-
-- https://elijahverdoorn.com/2020/04/14/automating-deployment-with-github-actions/
-
-- https://www.vektor-inc.co.jp/post/github-actions-deploy/
-
-- https://ews.ink/tech/blog-deploy-2/
-
-- https://webpick.info/automatiser-avec-github-actions/
-
-- https://matthias-andrasch.eu/blog/2021/tutorial-webseite-mittels-github-actions-deployment-zu-uberspace-uebertragen-rsync/
-
-- https://mikael.koutero.me/posts/hugo-github-actions-deploy-rsync/
-
-- https://cdmana.com/2021/02/20210208122400688I.html
-
-- https://jishuin.proginn.com/p/763bfbd38928
-
-- https://cloud.tencent.com/developer/article/1786522
-
-- http://www.ningco.cn/github_action_deploy_blog/
-
-- https://qdmana.com/2021/01/20210127094413405u.html
