@@ -1,23 +1,23 @@
-name: test_deploy
+# name: test_deploy
 
-on: 
-  push:
-    branches:
-      - master
+# on: 
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  test_deploy: 
-    runs-on: ubuntu-latest 
-    steps:
-      - uses: actions/checkout@v1
-      - name: deployBySsh
-        uses: ./
-        with:
-          switches: -avzh
-          path: ./README.md
-          remote_path: /opt
-          remote_host: 1.15.141.114
-          remote_port: 22
-          remote_user: root
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          rsh: df -h
+# jobs:
+#   test_deploy: 
+#     runs-on: ubuntu-latest 
+#     steps:
+#       - uses: actions/checkout@v1
+#       - name: deployBySsh
+#         uses: ./
+#         with:
+#           switches: -avzh
+#           path: ./README.md
+#           remote_path: /opt
+#           remote_host: 1.15.141.114
+#           remote_port: 22
+#           remote_user: root
+#           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           rsh: df -h
