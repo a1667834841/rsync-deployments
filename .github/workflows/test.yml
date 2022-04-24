@@ -13,7 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      
       - name: deploy
         uses: ./action
         with:
