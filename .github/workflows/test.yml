@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: deploy
+      - name: deployBySsh
         uses: ./action
         with:
            switches: -avzh
