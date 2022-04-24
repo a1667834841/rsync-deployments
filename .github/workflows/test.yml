@@ -1,0 +1,22 @@
+name: test_deploy
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build: # 自定义名称
+    runs-on: ubuntu-latest # 运行在虚拟机环境ubuntu-latest
+
+    steps:
+      - name: deploy
+        uses: ./action
+        with:
+           switches: -avzh
+          path: ./README.md
+          remote_path: /opt
+          remote_host: 1.15.141.114
+          remote_port: 22
+          remote_user: root
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
